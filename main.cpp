@@ -89,10 +89,12 @@ void heap::printpr() {
         it1++;
         return;
     }
-    cout << "binarytree h" << it1 << " = binarytree(";
+    cout << "\\begin{center}\n\\begin{asy}\nimport binarytree;\npicture pic;\n";
+    cout << "binarytree h = binarytree(";
     print(0);
     cout << ");\n";
-    cout << "draw(pic" << it1 << ", h" << it1 << ", condensed=true);\n";
+    cout << "draw(pic, h, condensed=true);\n";
+    cout << "add(pic.fit(), (0, 0));\n\\end{asy}\n\\end{center}\n";
     it1++;
 }
 
@@ -109,14 +111,6 @@ int main() {
     }
     for (int i = 0; i < 3; ++i) {
         a.extract_max();
-    }
-    cout << "picture ";
-    for (int i = 1; i < it1; ++i) {
-        cout << "pic" << i << ", ";
-    }
-    cout << "\n";
-    for (int i = 1; i < it1; ++i) {
-        cout << "add(pic" << i << ".fit(), (0, 0), " << i * 100 << "S);\n";
     }
     return 0;
 }
